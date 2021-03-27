@@ -5,7 +5,7 @@ const unique = require("array-unique");
 const arraySort = require("array-sort");
 
 // Vars
-const sheetString = "1z06eZuNBmwr8NSPDLsNtMwPvmvdd_RwxJYYooYbYTpk";
+const sheetString = "1B6gIVSCGZjaGrw9Xxqk5zKv5K43pDEgAoZj5spsd30E";
 const sheetString_About = "116qhps8aREtazTdZ4z_1qWkb7bPnZ14b2hCPEVepUFE";
 const port = 80; 
 
