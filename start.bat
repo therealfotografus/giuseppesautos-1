@@ -3,3 +3,4 @@ echo "setup.bat" > .gitignore
 git add .
 git commit -m "First commit"
 git push origin master
+pause
