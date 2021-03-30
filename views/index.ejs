@@ -13,6 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Giuseppe's Autos</title>
     <link rel="icon" href="imgs/logo.png" type="image/x-icon">
@@ -27,17 +29,14 @@
         ::-webkit-scrollbar {
             width: 10px;
         }
-
         /* Track */
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-
         /* Handle */
         ::-webkit-scrollbar-thumb {
             background: #888;
         }
-
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
@@ -45,10 +44,8 @@
     </style>
     <script>
         window.onscroll = function () { scrollFunction() };
-
         window.onscroll = () => {
             let logo = document.getElementById("m_logo");
-
             if ((document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)) {
                 logo.width = 120;
                 logo.height = 120;
@@ -59,16 +56,9 @@
         }
     </script>
     <style>
-        .carousel-inner {
-            height: 600px;
-            width: 100%;
-        }
 
         .carousel-item {
-        height: 60% !important;
-        width:  60% !important;
-        right: -365px;
-        
+            right: -365px;
     }
     </style>
     <style>
@@ -111,42 +101,36 @@
     <div class="container-fluid wh-100 d-flex p-0 mb-5">
         <div class="flex-fill">
             <div class="pb-4 bg-dark">
-                <div class="w3-content w3-display-container">
-                  <img class="mySlides" src="/imgs/fej1.jpg" style="width:67%;">
-                  <img class="mySlides" src="/imgs/fej2.jpg" style="width:67%;">
-                  <img class="mySlides" src="/imgs/fej3.jpg" style="width:67%;">
-                
-                    <style>
-                        img {
-                            display: block;
-                            margin-left: auto;
-                             margin-right: auto;
-                        }
-                    </style>
+                <div id="demo" class="carousel slide" data-ride="carousel">
 
-                  <button class="w3-button w3-black w3-display-left onclick="plusDivs(-1)">&#10094;</button>
-                  <button class="w3-button w3-black w3-display-right onclick="plusDivs(1)">&#10095;</button>
-                </div>
-                
-                <script>
-                var slideIndex = 1;
-                showDivs(slideIndex);
-                
-                function plusDivs(n) {
-                  showDivs(slideIndex += n);
-                }
-                
-                function showDivs(n) {
-                  var i;
-                  var x = document.getElementsByClassName("mySlides");
-                  if (n > x.length) {slideIndex = 1}
-                  if (n < 1) {slideIndex = x.length}
-                  for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";  
-                  }
-                  x[slideIndex-1].style.display = "block";  
-                }
-                </script>
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                      <li data-target="#demo" data-slide-to="0" class="active"></li>
+                      <li data-target="#demo" data-slide-to="1"></li>
+                      <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/imgs/fej1.jpg" width="1100" height="650">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/imgs/fej2.jpg" width="1100" height="650">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/imgs/fej3.jpg" width="1100" height="650">
+                      </div>
+                    </div>
+                    
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </a>
+                  </div>
             </div>
             <div class="row py-4 px-5">
                 <div class="col-8">
