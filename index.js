@@ -106,19 +106,9 @@ app.get("/katalogus", function (req, res) { return __awaiter(_this, void 0, void
                     element = _a[_i];
                     availableCars[availableCars.length] = element[0];
                 }
-                availableCars.shift();
                 arraySort(availableCars);
                 unique(availableCars);
-                /*
-                rows.data.values.forEach(element => {
-                    rows2.data.value.array.forEach(element2 => {
-                        if(element[0] == element2[0]){
-                            availableCars[availableCars.length] = element[0]
-                        }
-                    });
-                });
-                */
-                // Needed rows: A(1), B(2), J(10), K(11)
+                availableCars.shift();
                 res.render("katalogus", { rows: rows.data.values, availableCars: availableCars });
                 return [2 /*return*/];
         }
@@ -153,19 +143,9 @@ app.post("/katalogus", urlencodedParser, function (req, res) { return __awaiter(
                     element = _a[_i];
                     availableCars[availableCars.length] = element[0];
                 }
-                availableCars.shift();
                 arraySort(availableCars);
                 unique(availableCars);
-                /*
-                rows.data.values.array.forEach(element => {
-                    rows2.data.value.array.forEach(element2 => {
-                        if(element[0] == element2[0]){
-                            availableCars[availableCars.length] = element[0]
-                        }
-                    });
-                });
-                */
-                // Needed rows: A(1), B(2), J(10), K(11)
+                availableCars.shift();
                 res.render("katalogus-search", { rows: rows.data.values, search: req.body, availableCars: availableCars });
                 return [2 /*return*/];
         }
