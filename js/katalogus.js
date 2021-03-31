@@ -1,3 +1,29 @@
+function setup_car_imgs(){
+    const imgs = [...document.querySelectorAll("[data-car]")]
+
+    imgs.forEach((element, index) => {
+        element.src = get_img_path(element.getAttribute("data-car"));
+    })
+}
+setup_car_imgs()
+
+function popup_modal(text){
+    if (!text) return;
+    
+    var modal = new bootstrap.Modal(document.getElementById("m_dialog"));
+    var m_title = document.getElementById("m_dialog-title");
+    var m_img = document.getElementById("m_dialog-img");
+
+    modal.show();
+    m_title.innerHTML = text || "Ennek nem kellene megtörténnie";
+    m_img.src = get_img_path(text) || "/imgs/katalogus.png"
+}
+function close_modal(){
+    var modal = new bootstrap.Modal(document.getElementById("m_dialog"));
+
+    modal.hide();
+}
+
 function get_img_path(name){
     switch(name){
         case "Brioso":
@@ -322,7 +348,7 @@ function get_img_path(name){
             return "/imgs/cars/blazer4.png";
             break;
         case "Coil Brawler":
-            return "/imgs/cars/brawler.png";
+            return "/imgs/cars/blazer4.png";
             break;
         case "Annis Hellion":
             return "/imgs/cars/hellion.png";

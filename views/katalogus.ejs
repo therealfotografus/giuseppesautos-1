@@ -16,74 +16,10 @@
 	<meta charset="utf-8">
 	<title>Giuseppe's Autos Katalógus</title>
 	<link rel="icon" href="imgs/logo.png" type="image/x-icon">
+	<link rel="stylesheet" href="/css/styles.css">
 
-	<style>
-		.dummy {
-			height: 213px;
-			visibility: hidden;
-		}
-		.zoom{
-			transition: transform .2s;
-		}
-		.zoom:hover {
-			-ms-transform: scale(1.1); /* IE 9 */
-			-webkit-transform: scale(1.1); /* Safari 3-8 */
-			transform: scale(1.1); 
-		}
-	</style>
-	<style>
-		/* width */
-		::-webkit-scrollbar {
-			width: 10px;
-		}
-
-		/* Track */
-		::-webkit-scrollbar-track {
-			background: #f1f1f1;
-		}
-
-		/* Handle */
-		::-webkit-scrollbar-thumb {
-			background: #888;
-		}
-
-		/* Handle on hover */
-		::-webkit-scrollbar-thumb:hover {
-			background: #555;
-		}
-	</style>
+	<script src="/js/index.js" defer></script>
 	<script src="/js/katalogus.js" defer></script>
-	<script>
-		window.onscroll = function () { scrollFunction() };
-
-		window.onscroll = () => {
-			let logo = document.getElementById("m_logo");
-
-			if ((document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)) {
-				logo.width = 120;
-				logo.height = 120;
-			} else {
-				logo.width = 181;
-				logo.height = 181;
-			}
-		}
-		function popup_modal(text){
-			if (!text) return;
-			
-			var modal = new bootstrap.Modal(document.getElementById("m_dialog"));
-			var m_title = document.getElementById("m_dialog-title");
-			var m_img = document.getElementById("m_dialog-img");
-
-			modal.show();
-			m_title.innerHTML = text || "Ennek nem kellene megtörténnie";
-			m_img.src = get_img_path(text) || "/imgs/katalogus.png"
-		}
-		function close_modal(){
-			var modal = new bootstrap.Modal(document.getElementById("m_dialog"));
-
-			modal.hide();
-		}
-	</script>
 </head>
 
 <body class="container-fluid wh-100 d-flex p-0">
@@ -122,12 +58,14 @@
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a href="katalogus" class="nav-link"><img style="position: fixed; right: 106px;" src="imgs/katalogus.png"><br>
-							<hr><i>Katalógus</i>
+						<hr>
+						<i>Katalógus</i>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a href="rolunk" class="nav-link"><img style="position: fixed; right: 33px;" src="imgs/rolunk.png"><br>
-							<hr><i>Rólunk</i>
+						<hr>
+						<i>Rólunk</i>
 						</a>
 					</li>
 				</ul>
@@ -162,28 +100,33 @@
 			</div>
 		</form>
 
-		<div class="py-5">
-			<div class="row p-1 row-eq-height m-auto justify-content-evenly">
+		<div class="py-5 container-fluid">
+			<div class="catalog-container w-100 m-auto p-1 m-auto">
 				<% rows.forEach((element, index)=> {
 					if (index != 0 && Boolean(element[5])) { %>
-					<div class="zoom col-5 col-lg-3 pt-3 m-1">
-						<div class="card" style="height: 26rem;">
+					<div class="float-start zoom pt-3 m-1">
+						<div class="card" style="height: 26rem; width: 32rem;">
 							<div class="card-header">
-								<h4 class="text-center" style="cursor: pointer;" onclick="popup_modal('<%= element[0] %>')" ><%= element[0] %></h4>
+								<h4 class="text-center"><%= element[0] %></h4>
 							</div>
 							<div class="card-body">
-								<i>Bolti:</i>
-								<p class="display-6">
-									<%= element[2]%>
-								</p>
-								<i>Irányár:</i>
-								<p class="display-6">
-									<%= element[4]%>
-								</p>
+								<div class="row">
+									<div class="col">
+										<i>Bolti:</i>
+										<p class="display-6">
+											<%= element[2] %>
+										</p>
+										<i>Eladó:</i>
+										<p class="display-6">
+											<%= element[4] %>
+										</p>
+									</div>
+									<div class="col">
+										<img class="card-img" style="cursor: pointer;" onclick="popup_modal('<%= element[0] %>')" data-car="<%= element[0] %>" src="" alt="">
+									</div>
+								</div>
 								<hr>
-								<p class="card-text"><b>
-										<%= element[10]%>
-									</b></p>
+								<p class="card-text"><b> <%= element[10]%> </b></p>
 							</div>
 							<div class="card-footer bg-dark">
 								<div class="p-2 text-center">
@@ -198,7 +141,7 @@
 			</div>
 		</div>
 		<footer class="bg-dark footer fixed-bottom">
-			<div class="text-white text-end p-3">
+			<div class="text-white text-end pb-3 pe-3 mt-3">
 				<span>&#169 <%= new Date().getFullYear() %>. Giuseppe's Autos | Minden jog fenntartva!</span>
 			</div>
 		</footer>

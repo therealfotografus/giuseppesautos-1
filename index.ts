@@ -15,7 +15,8 @@ const app = express();
 
 app.set("view engine", "ejs")
 app.use("/imgs", express.static("imgs"));
-app.use("/js", express.static("js"))
+app.use("/js", express.static("js"));
+app.use("/css", express.static("css"));
 
 // GET request handlers
 app.get("/", (req, res) => {

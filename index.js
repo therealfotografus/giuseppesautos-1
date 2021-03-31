@@ -41,7 +41,7 @@ var bodyParser = require("body-parser");
 var unique = require("array-unique");
 var arraySort = require("array-sort");
 // Vars
-var sheetString = "1B6gIVSCGZjaGrw9Xxqk5zKv5K43pDEgAoZj5spsd30E";
+var sheetString = "1z06eZuNBmwr8NSPDLsNtMwPvmvdd_RwxJYYooYbYTpk";
 var sheetString_About = "116qhps8aREtazTdZ4z_1qWkb7bPnZ14b2hCPEVepUFE";
 var port = 80;
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -49,6 +49,7 @@ var app = express();
 app.set("view engine", "ejs");
 app.use("/imgs", express.static("imgs"));
 app.use("/js", express.static("js"));
+app.use("/css", express.static("css"));
 // GET request handlers
 app.get("/", function (req, res) {
     res.render("index");

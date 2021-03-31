@@ -13,56 +13,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Giuseppe's Autos</title>
     <link rel="icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <script src="/js/index.js" defer></script>
 
     <style>
-        .dummy {
-            height: 213px;
+        .carousel-inner {
+            width: 70%;
+            height: 70%;
+            margin: 0 auto;
         }
-    </style>
-    <style>
-        /* width */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-        }
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-    </style>
-    <script>
-        window.onscroll = function () { scrollFunction() };
-        window.onscroll = () => {
-            let logo = document.getElementById("m_logo");
-            if ((document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)) {
-                logo.width = 120;
-                logo.height = 120;
-            } else {
-                logo.width = 181;
-                logo.height = 181;
-            }
-        }
-    </script>
-    <style>
-
-        .carousel-item {
-            right: -365px;
-    }
-    </style>
-    <style>
-         .mySlides {display:none;}
     </style>
 </head>
 
@@ -83,12 +46,14 @@
             <ul class="navbar-nav">
 				<li class="nav-item">
 					<a href="katalogus" class="nav-link"><img style="position: fixed; right: 106px;" src="imgs/katalogus.png"><br>
-						<hr><i>Katalógus</i>
+					<hr>
+					<i>Katalógus</i>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="rolunk" class="nav-link"><img style="position: fixed; right: 33px;" src="imgs/rolunk.png"><br>
-						<hr><i>Rólunk</i>
+					<hr>
+					<i>Rólunk</i>
 					</a>
 				</li>
             </ul>
@@ -97,40 +62,39 @@
     <div class="dummy bg-dark"></div>
 
     <!---Tartalom-->
-
-    <div class="container-fluid wh-100 d-flex p-0 mb-5">
+    
+    <div class="container-fluid wh-100 d-flex p-0 pb-5">
         <div class="flex-fill">
             <div class="pb-4 bg-dark">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-
+                <div id="carousel" class="carousel slide w-100 m-auto" data-ride="carousel">
                     <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                      <li data-target="#demo" data-slide-to="0" class="active"></li>
-                      <li data-target="#demo" data-slide-to="1"></li>
-                      <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-                    
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/imgs/fej1.jpg" width="1100" height="650">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/imgs/fej2.jpg" width="1100" height="650">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/imgs/fej3.jpg" width="1100" height="650">
-                      </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                      <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                      <span class="carousel-control-next-icon"></span>
-                    </a>
-                  </div>
+                    <!-- Slide -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="/imgs/fej1.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/imgs/fej2.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/imgs/fej3.jpg">
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
             <div class="row py-4 px-5">
                 <div class="col-8">
@@ -138,8 +102,7 @@
                     <hr>
                     <p class="fs-4">
                         Ha éppen a térképet nézegeti és nem tudná mi az a kis piros autó, akkor elmondanám, hogy telephelyünk
-                        jelzése volna.
-                        Bármikor ha éppen egy autót venne, először fáradjon be hozzánk. Segítünk megtalálni a megfelelő
+                        jelzése volna. Bármikor ha éppen egy autót venne, először fáradjon be hozzánk. Segítünk megtalálni a megfelelő
                         autót a legjobb árakon
                     </p>
                 </div>
@@ -156,16 +119,14 @@
                 <hr class="w-75 d-block mx-auto">
                 <img class="img-fluid rounded d-block mx-auto" src="imgs/telep.jpeg" alt="">
             </div>
-            <!--        <div class="py-4 px-5">
+                <!---<div class="py-4 px-5">
                         <p class="display-6 text-center p-2">Legújabb híreink</p>
                         <hr class="w-75 d-block mx-auto">
-                        <i>Jelenleg nincs hír.</i>
-            -->
-            </div>
-        </div>
+                     </div>-->        
+                </div>
     </div>
     <footer class="bg-dark footer fixed-bottom">
-        <div class="text-white text-end p-3">
+        <div class="text-white text-end pb-3 pe-3 mt-3">
             <span>&#169 <%= new Date().getFullYear() %>. Giuseppe's Autos | Minden jog fenntartva!</span>
         </div>
     </footer>
