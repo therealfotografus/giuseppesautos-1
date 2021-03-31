@@ -35,7 +35,7 @@ app.get("/rolunk", async (req, res) => {
     const rows = await sheets.spreadsheets.values.get({
         auth,
         spreadsheetId: sheetId,
-        range: "Giuseppe's Autos Listing"
+        range: "Munka1"
     });
 
     res.render("rolunk", {people: rows.data.values})

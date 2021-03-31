@@ -71,7 +71,7 @@ app.get("/rolunk", function (req, res) { return __awaiter(_this, void 0, void 0,
                 return [4 /*yield*/, sheets.spreadsheets.values.get({
                         auth: auth,
                         spreadsheetId: sheetId,
-                        range: "Giuseppe's Autos Listing"
+                        range: "Munka1"
                     })];
             case 2:
                 rows = _a.sent();
