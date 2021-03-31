@@ -347,9 +347,6 @@ function get_img_path(name){
         case "Hot Rod Blazer":
             return "/imgs/cars/blazer4.png";
             break;
-        case "Coil Brawler":
-            return "/imgs/cars/brawler.png";
-            break;
         case "Annis Hellion":
             return "/imgs/cars/hellion.png";
             break;
@@ -946,6 +943,9 @@ function get_img_path(name){
             break;
         case "Trailer":
             return "/imgs/cars/boattrailer.png";
+            break;
+        case "Coil Brawler":
+            return "/imgs/cars/brawler.png";
             break;
         default:
             return "/imgs/katalogus.png";
