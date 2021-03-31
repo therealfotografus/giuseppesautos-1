@@ -41,7 +41,7 @@ var bodyParser = require("body-parser");
 var unique = require("array-unique");
 var arraySort = require("array-sort");
 // Vars
-var sheetString = "1z06eZuNBmwr8NSPDLsNtMwPvmvdd_RwxJYYooYbYTpk";
+var sheetString = "1B6gIVSCGZjaGrw9Xxqk5zKv5K43pDEgAoZj5spsd30E";
 var sheetString_About = "116qhps8aREtazTdZ4z_1qWkb7bPnZ14b2hCPEVepUFE";
 var port = 80;
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -71,7 +71,7 @@ app.get("/rolunk", function (req, res) { return __awaiter(_this, void 0, void 0,
                 return [4 /*yield*/, sheets.spreadsheets.values.get({
                         auth: auth,
                         spreadsheetId: sheetId,
-                        range: "Munka1"
+                        range: "Giuseppe's Autos Listing"
                     })];
             case 2:
                 rows = _a.sent();
