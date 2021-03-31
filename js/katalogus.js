@@ -348,7 +348,7 @@ function get_img_path(name){
             return "/imgs/cars/blazer4.png";
             break;
         case "Coil Brawler":
-            return "/imgs/cars/blazer4.png";
+            return "/imgs/cars/brawler.png";
             break;
         case "Annis Hellion":
             return "/imgs/cars/hellion.png";
