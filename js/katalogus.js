@@ -47,6 +47,9 @@ function get_img_path(name){
         case "Asbo":
             return "/imgs/cars/asbo.png";
             break;
+        case "Brawler":
+            return "/imgs/cars/brawler.png";
+            break;
         case "Blista":
             return "/imgs/cars/blista.png";
             break;
