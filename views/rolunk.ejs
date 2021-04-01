@@ -143,50 +143,6 @@
 					<% }
 				}) %>
 			</div>
-			<div class="w-100 pb-5 pt-5">
-				<p class="display-3 text-center">Gyakornokok</p>
-				<hr class="d-block m-auto w-75">
-			</div>
-			<div class="member-container">
-			<% people.forEach((element, index) => {
-				var name = element[5]
-
-				if (element[5].length > 16){
-					name = element[5].substring(0,16) + "..."
-				}
-				if ((element[2] == "Gyakornok") && (element[7])){
-					%>
-						<div class="pb-5">
-							<div class="card" style="width: 27rem; height: 27rem;">
-								<div class="card-body">
-									<img class="card-img" src="<%= element[7] || "https://static1.e621.net/data/47/4c/474ced57816f56cfe7a7a7d4d6381c6e.png" %>" alt="">
-									<div class="card-img-overlay hover">
-										<div class="member-data w-100 h-100 text-center text-dark">
-											<div>
-												<span class="display-5"><%= element[1] || "Nincs neve"%></span>
-												<br>
-												<span class="h5"><%= element[2] || "Nincs beosztása" %></span>
-												<br>
-												<br>
-												<span class="h4">Elérhetőségek:</span>
-												<br>
-												<hr class="w-75 d-block mx-auto">
-												<span class="fs-4">Telefon:</span>
-												<br>
-												<span class="h3"><%= element[4] %></span>
-												<br>
-												<span class="fs-4">E-mail (Discord):</span>
-												<br>
-												<span class="h3" style="cursor: pointer;" data-bs-toggle="tooltip" title="Kattintson ide a másoláshoz" onclick="copyTextToClipboard('<%= element[5] %>')"><%= name %></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					<% }
-				}) %>
-			</div>
 		</div>
 		<footer class="bg-dark footer fixed-bottom">
 			<div class="text-white text-end pb-3 pe-3 mt-3">
