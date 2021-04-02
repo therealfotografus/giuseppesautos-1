@@ -29,6 +29,9 @@ function get_img_path(name){
         case "Brioso":
             return "/imgs/cars/brioso.png";
             break;
+        case "Freecrawler":
+            return "/imgs/cars/freecrawler.png";
+            break;
         case "Rhapsody":
             return "/imgs/cars/rhapsody.png";
             break;
