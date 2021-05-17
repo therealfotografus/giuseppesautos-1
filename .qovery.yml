@@ -1,0 +1,11 @@
+---
+application:
+  name: "giuseppesautos-1"
+  project: "asd"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-giuseppesautos-1"
+  routes:
+  - application_name: "giuseppesautos-1"
+    paths:
+    - "/*"
